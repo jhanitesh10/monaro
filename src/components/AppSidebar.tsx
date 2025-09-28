@@ -71,12 +71,14 @@ export function AppSidebar({ activeTab, onTabChange }: AppSidebarProps) {
               <div
                 className={`${
                   open || isMobile ? "w-8 h-8" : "w-6 h-6"
-                } bg-gradient-primary rounded-lg flex items-center justify-center`}
+                } flex items-center justify-center`}
               >
-                <IndianRupee
+                <img
+                  src="https://i.ibb.co/VcM6PMgm/Untitled-design.png"
+                  alt="Monaro Logo"
                   className={`${
-                    open || isMobile ? "w-5 h-5" : "w-4 h-4"
-                  } text-white`}
+                    open || isMobile ? "w-8 h-8" : "w-6 h-6"
+                  } object-contain rounded-lg`}
                 />
               </div>
               {(open || isMobile) && (
