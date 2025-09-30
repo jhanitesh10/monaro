@@ -1,73 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <title>Monaro</title>
-    <meta name="description" content="Manage your money" />
-    <meta name="author" content="Lovable" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>pisa-wise</title>
+    <meta name="description" content="Manage your money">
+    <meta name="author" content="DashWiz" />
+    
     <!-- Google Fonts - Google Sans & Roboto -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <meta property="og:title" content="dashwiz-folio" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:description" content="Personal Finance Dashboard" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:image"
-      content="https://lovable.dev/opengraph-image-p98pqg.png"
-    />
+    <meta property="og:image" content="/placeholder.svg" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta
-      name="twitter:image"
-      content="https://lovable.dev/opengraph-image-p98pqg.png"
-    />
-
+    <meta name="twitter:site" content="@dashwiz" />
+    <meta name="twitter:image" content="/placeholder.svg" />
+    
     <!-- PWA Meta Tags -->
     <meta name="theme-color" content="#3b82f6" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="apple-mobile-web-app-title" content="Monaro" />
-
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="https://i.ibb.co/VcM6PMgm/Untitled-design.png"
-    />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="PisaWise" />
+    
+    <link rel="icon" type="image/x-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/EFdFTzXLJwbqkpNglxDMMwyJOwk1/uploads/1757683677227-rupee-symbol.png">
     <link rel="manifest" href="/manifest.json" />
-    <link
-      rel="apple-touch-icon"
-      href="https://i.ibb.co/VcM6PMgm/Untitled-design.png"
-    />
-  </head>
+    <link rel="apple-touch-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/EFdFTzXLJwbqkpNglxDMMwyJOwk1/uploads/1757683677227-rupee-symbol.png" />
+</head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("/sw.js")
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
             .then((registration) => {
-              console.log("SW registered: ", registration);
+              console.log('SW registered: ', registration);
             })
             .catch((registrationError) => {
-              console.log("SW registration failed: ", registrationError);
+              console.log('SW registration failed: ', registrationError);
             });
         });
       }

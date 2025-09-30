@@ -1,12 +1,12 @@
-import {
-  LayoutDashboard,
-  Receipt,
-  Building,
+import { 
+  LayoutDashboard, 
+  Receipt, 
+  Building, 
   IndianRupee,
   ChevronsLeft,
   ChevronsRight,
-  Monitor,
-} from "lucide-react";
+  Monitor
+} from 'lucide-react';
 import {
   Sidebar,
   SidebarContent,
@@ -17,16 +17,16 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "@/components/ui/sidebar";
-import { Button } from "@/components/ui/button";
-import { useIsMobile } from "@/hooks/use-mobile";
-import { useNavigate } from "react-router-dom";
-import { useGlobalStore } from "@/store/globalStore";
+} from '@/components/ui/sidebar';
+import { Button } from '@/components/ui/button';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { useNavigate } from 'react-router-dom';
+import { useGlobalStore } from '@/store/globalStore';
 
 const menuItems = [
-  { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { id: "transactions", label: "Transactions", icon: Receipt },
-  { id: "banks", label: "Banks", icon: Building },
+  { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { id: 'transactions', label: 'Transactions', icon: Receipt },
+  { id: 'banks', label: 'Banks', icon: Building },
 ];
 
 interface AppSidebarProps {
@@ -42,49 +42,33 @@ export function AppSidebar({ activeTab, onTabChange }: AppSidebarProps) {
 
   const tabToPath = (tab: string): string => {
     switch (tab) {
-      case "transactions":
-        return "/transactions";
-      case "banks":
-        return "/banks";
+      case 'transactions':
+        return '/transactions';
+      case 'banks':
+        return '/banks';
       default:
-        return "/";
+        return '/';
     }
   };
 
   return (
-    <Sidebar
+    <Sidebar 
       className="border-r border-border data-[state=collapsed]:w-36"
       collapsible="icon"
     >
       <SidebarContent>
         <div className="p-4">
-          <div
-            className={`flex items-center ${
-              open || isMobile ? "justify-between" : "justify-center"
-            }`}
-          >
-            <button
+          <div className={`flex items-center ${open || isMobile ? 'justify-between' : 'justify-center'}`}>
+            <button 
               onClick={refreshData}
               disabled={refreshing}
               className="flex items-center gap-3 hover:opacity-80 transition-opacity disabled:opacity-50"
             >
-              <div
-                className={`${
-                  open || isMobile ? "w-8 h-8" : "w-6 h-6"
-                } flex items-center justify-center`}
-              >
-                <img
-                  src="https://i.ibb.co/VcM6PMgm/Untitled-design.png"
-                  alt="Monaro Logo"
-                  className={`${
-                    open || isMobile ? "w-8 h-8" : "w-6 h-6"
-                  } object-contain rounded-lg`}
-                />
+              <div className={`${open || isMobile ? 'w-8 h-8' : 'w-6 h-6'} bg-gradient-primary rounded-lg flex items-center justify-center`}>
+                <IndianRupee className={`${open || isMobile ? 'w-5 h-5' : 'w-4 h-4'} text-white`} />
               </div>
               {(open || isMobile) && (
-                <span className="text-xl font-bold text-foreground">
-                  Monaro
-                </span>
+                <span className="text-xl font-bold text-foreground">PisaWise</span>
               )}
             </button>
             {!isMobile && (open || isMobile) && (
@@ -111,7 +95,7 @@ export function AppSidebar({ activeTab, onTabChange }: AppSidebarProps) {
             </div>
           )}
         </div>
-
+        
         <SidebarGroup>
           {(open || isMobile) && <SidebarGroupLabel>Menu</SidebarGroupLabel>}
           <SidebarGroupContent>
@@ -119,7 +103,7 @@ export function AppSidebar({ activeTab, onTabChange }: AppSidebarProps) {
               {menuItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = activeTab === item.id;
-
+                
                 return (
                   <SidebarMenuItem key={item.id}>
                     <SidebarMenuButton
@@ -128,21 +112,11 @@ export function AppSidebar({ activeTab, onTabChange }: AppSidebarProps) {
                         navigate(tabToPath(item.id));
                       }}
                       isActive={isActive}
-                      className={`w-full h-10 ${
-                        open || isMobile
-                          ? "justify-start px-3"
-                          : "justify-center px-0"
-                      }`}
+                      className={`w-full h-10 ${(open || isMobile) ? 'justify-start px-3' : 'justify-center px-0'}`}
                       tooltip={!(open || isMobile) ? item.label : undefined}
                     >
-                      <Icon
-                        className={`w-5 h-5 ${
-                          !(open || isMobile) ? "mx-auto" : ""
-                        }`}
-                      />
-                      {(open || isMobile) && (
-                        <span className="ml-3">{item.label}</span>
-                      )}
+                      <Icon className={`w-5 h-5 ${!(open || isMobile) ? 'mx-auto' : ''}`} />
+                      {(open || isMobile) && <span className="ml-3">{item.label}</span>}
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 );
